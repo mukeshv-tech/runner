@@ -4,6 +4,13 @@ primary_region = 'iad'
 [build]
   dockerfile = 'Dockerfile'
 
+[env]
+  REPO_URL = 'https://github.com/mukeshv-tech/Taskrebulid'
+  RUNNER_NAME = 'fly-runner'
+  RUNNER_LABELS = 'docker,fly,linux'
+  RUNNER_REPLACE = 'true'
+  RUNNER_EPHEMERAL = 'false'
+
 # GitHub Runner connects outbound to GitHub; no inbound web services or public IPs required
 # Keeping [[services]] / [http_service] omitted avoids IP provisioning errors
 
@@ -11,3 +18,4 @@ primary_region = 'iad'
   size = 'shared-cpu-1x'
   memory = '2048mb'
   cpus = 1
+
