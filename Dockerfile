@@ -18,6 +18,12 @@ RUN apt-get update -y && apt-get install -y --no-install-recommends \
     sudo \
     tar \
     unzip \
+    lsb-release \
+    python3 \
+    python3-pip \
+    python3-venv \
+    nodejs \
+    npm \
     libicu-dev \
     liblttng-ust-dev \
     libssl-dev \
