@@ -1,0 +1,13 @@
+app = 'runner-u7elhg'
+primary_region = 'iad'
+
+[build]
+  dockerfile = 'Dockerfile'
+
+# GitHub Runner connects outbound to GitHub; no inbound web services or public IPs required
+# Keeping [[services]] / [http_service] omitted avoids IP provisioning errors
+
+[[vm]]
+  size = 'shared-cpu-1x'
+  memory = '2048mb'
+  cpus = 1
