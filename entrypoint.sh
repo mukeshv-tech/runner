@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 set -e
 
+# Fallback to default repo if not supplied
+REPO_URL="${REPO_URL:-https://github.com/mukeshv-tech/Taskrebulid}"
+
 # Validate repository URL
 if [ -z "${REPO_URL}" ]; then
   echo "Error: REPO_URL environment variable is required (e.g. https://github.com/owner/repo or https://github.com/org)"

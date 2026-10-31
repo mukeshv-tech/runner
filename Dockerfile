@@ -38,6 +38,13 @@ RUN ARCH=$(dpkg --print-architecture) \
     && rm runner.tar.gz \
     && ./bin/installdependencies.sh
 
+# Default environment variables (can be overridden at runtime)
+ENV REPO_URL="https://github.com/mukeshv-tech/Taskrebulid"
+ENV RUNNER_NAME="fly-runner"
+ENV RUNNER_LABELS="docker,fly,linux"
+ENV RUNNER_REPLACE="true"
+ENV RUNNER_EPHEMERAL="false"
+
 # Copy startup script
 COPY --chown=runner:runner entrypoint.sh /home/runner/entrypoint.sh
 RUN chmod +x /home/runner/entrypoint.sh \
